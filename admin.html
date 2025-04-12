@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthGenius Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Critical Flag Styling */
+.critical-flag {
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    background: #ff4444;
+    color: white;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 999;
+    animation: pulse 2s infinite;
+    display: none;
+}
+
+.critical-flag i {
+    font-size: 1.2rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Admin Panel Link */
+.admin-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 0.9rem;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+/* Admin Panel Styles (new page) */
+.admin-panel {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.admin-panel h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.flagged-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.flagged-item {
+    background: var(--light-color);
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--error-color);
+}
+
+.flagged-item h3 {
+    margin-top: 0;
+    color: var(--error-color);
+}
+
+.flagged-item p {
+    margin-bottom: 0.5rem;
+}
+
+.flagged-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.flag-critical {
+    background-color: #ffeeee;
+    border-left-color: #ff4444;
+}
+
+.flag-urgent {
+    background-color: #fff8e6;
+    border-left-color: #ffbb33;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>HealthGenius Admin</h1>
+            </div>
+        </header>
+
+        <main class="admin-panel">
+            <h1><i class="fas fa-flag"></i> Flagged Content</h1>
+            
+            <div class="flagged-list">
+                <!-- Example flagged items - in real app these would be populated from server -->
+                <div class="flagged-item flag-critical">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Critical Content</h3>
+                    <p>"I've been having severe chest pain and coughing up blood for 3 days"</p>
+                    <div class="flagged-meta">
+                        <span><i class="fas fa-user"></i> User ID: 45872</span>
+                        <span><i class="fas fa-clock"></i> 2023-11-15 14:32</span>
+                        <span><i class="fas fa-tag"></i> Symptom Checker</span>
+                    </div>
+                </div>
+                
+                <div class="flagged-item flag-urgent">
+                    <h3><i class="fas fa-exclamation-circle"></i> Urgent Content</h3>
+                    <p>"My daddy real weak now. He keep coughin’, can’t eat much, and say he hurtin’ all the time.. help me help him pls.."</p>
+                    <div class="flagged-meta">
+                        <span><i class="fas fa-user"></i> User ID: 45901</span>
+                        <span><i class="fas fa-clock"></i> 2023-11-15 13:45</span>
+                        <span><i class="fas fa-tag"></i> Patient Education</span>
+                    </div>
+                </div>
+                
+                <!-- More flagged items would appear here -->
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 HealthGenius Admin Panel | Restricted Access</p>
+        </footer>
+    </div>
+</body>
+</html>
